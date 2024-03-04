@@ -102,3 +102,38 @@ Although PowerShell 3.0 and later releases typically load modules into your Powe
 PS > Import-Module AWSPowerShell.NetCore
 ```
 To load the AWSPowerShell.NetCore module into a PowerShell session automatically, add that command to your PowerShell profile.
+
+## Clean installation of AWSPowerShell.NetCore Module
+Check if any AWS Modules are already installed and remove them. Only a single version of a single variant of AWS Tools for PowerShell (AWSPowerShell, AWSPowerShell.NetCore or 
+AWS.Tools.Common) can be imported at any time.
+
+Make sure to run these commands in an elevated PowerShell session (Run as Administrator) to ensure you have the necessary permissions for installing and uninstalling modules.
+
+List all installed AWS modules:
+
+```PowerShell
+Get-Module -Name AWS* -ListAvailable | Select-Object Name, Version, Path
+```
+Remove all installed AWS modules:
+```PowerShell
+Get-Module -Name AWS* -ListAvailable | Uninstall-Module -Force
+```
+After removing the existing AWS modules, you can then install the AWSPowerShell.NetCore module:
+
+```PowerShell
+Install-Module -Name AWSPowerShell.NetCore -Force -AllowClobber
+```
+To list the commands available in the module:
+
+```PowerShell
+Get-Command -Module AWSPowerShell.NetCore
+```
+
+After the successful installation, you can use the AWSPowerShell.NetCore module in your scripts
+
+```PowerShell
+# Import AWSPowerShell.NetCore
+Import-Module AWSPowerShell.NetCore
+
+# Your AWS-related scripts...
+```
