@@ -137,3 +137,9 @@ Import-Module AWSPowerShell.NetCore
 
 # Your AWS-related scripts...
 ```
+
+To check the list of commands availble in a module
+
+```PowerShell
+Get-Command -Module AWS.Tools.ECS
+```
