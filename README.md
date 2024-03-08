@@ -141,5 +141,5 @@ Import-Module AWSPowerShell.NetCore
 To check the list of commands availble in a module
 
 ```PowerShell
-Get-Command -Module AWS.Tools.ECS
+Get-Command -Module AWSPowerShell.NetCore
 ```
