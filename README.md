@@ -123,23 +123,27 @@ After removing the existing AWS modules, you can then install the AWSPowerShell.
 ```PowerShell
 Install-Module -Name AWSPowerShell.NetCore -Force -AllowClobber
 ```
+
+To install the ImportExcel module, execute the following command:
+
+```powershell
+Install-Module -Name ImportExcel
+```
+
 To list the commands available in the module:
 
 ```PowerShell
 Get-Command -Module AWSPowerShell.NetCore
+Get-Command Export-Excel
 ```
 
 After the successful installation, you can use the AWSPowerShell.NetCore module in your scripts
 
 ```PowerShell
-# Import AWSPowerShell.NetCore
+# Import Prerequisite Modules
 Import-Module AWSPowerShell.NetCore
+Import-Module ImportExcel
 
 # Your AWS-related scripts...
 ```
 
-To check the list of commands availble in a module
-
-```PowerShell
-Get-Command -Module AWSPowerShell.NetCore
-```
